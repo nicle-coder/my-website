@@ -15,6 +15,7 @@ body{
   color:#222;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  overflow-x: hidden;
 }
 
 .site-header{
@@ -148,9 +149,13 @@ body{
   bottom: 0;
   background-image: url(homepage.png);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   z-index: 1;
   transition: filter 0.4s ease;
+  width: 100%;
+  height: 100%;
 }
 
 .hero.blurred::before {
@@ -517,30 +522,34 @@ body{
   align-items: center;
   justify-content: center;
 }
-/* RESPONSIVE DESIGN - DELETE ALL OLD @media RULES AND REPLACE WITH THIS */
 
-/* Tablets and Large Phones (768px and below) */
-@media only screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
+/* Ensure images never overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh !important;
+    height: 100vh !important;
+    width: 100vw !important;
   }
   
   .hero::before {
     background-size: cover !important;
-    background-position: center !important;
+    background-position: center center !important;
     background-attachment: scroll !important;
-  }
-  
-  .hero {
+    width: 100% !important;
+    height: 100% !important;
     min-height: 100vh !important;
-    background-size: cover !important;
   }
   
   .site-header {
-    flex-direction: column !important;
-    padding: 12px !important;
-    align-items: stretch !important;
-    gap: 10px !important;
+    flex-direction: column;
+    padding: 12px;
+    align-items: stretch;
   }
   
   .brand {
@@ -549,196 +558,195 @@ body{
   
   .project-container {
     width: 100%;
-    padding-top: 0 !important;
-    gap: 8px !important;
+    padding-top: 0;
   }
   
   .project-label {
-    font-size: 12px !important;
-    padding: 10px 12px !important;
+    font-size: 12px;
+    padding: 10px 12px;
     text-align: center;
-    letter-spacing: 0.3px !important;
+    letter-spacing: 0.3px;
   }
   
   .nav-buttons {
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 8px !important;
-    margin-left: 0 !important;
-    flex-wrap: nowrap !important;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    margin-left: 0;
   }
   
   .pill-btn {
-    width: 100% !important;
-    padding: 12px 16px !important;
-    font-size: 13px !important;
-    justify-content: center !important;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 13px;
+    justify-content: center;
   }
   
   .talakayan-wrapper {
-    width: 100% !important;
+    width: 100%;
   }
   
   .talakayan-dropdown {
-    position: static !important;
-    width: 100% !important;
+    position: static;
+    width: 100%;
     margin-top: 8px;
   }
   
   .close-btn {
-    top: 12px !important;
-    right: 12px !important;
-    width: 36px !important;
-    height: 36px !important;
-    font-size: 20px !important;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
   }
   
   .hero-overlay {
     padding: 12px !important;
+    width: 100% !important;
+    height: 100% !important;
   }
   
   .overlay-inner {
-    padding: 8px !important;
-    max-width: 100% !important;
+    padding: 8px;
+    max-width: 100%;
   }
   
   .panimula-box,
   .quiz-container {
-    border-radius: 10px !important;
-    max-width: 100% !important;
+    border-radius: 10px;
+    max-width: 100%;
   }
   
   .panimula-inner {
-    padding: 18px 14px !important;
-    font-size: 14px !important;
-    line-height: 1.5 !important;
+    padding: 18px 14px;
+    font-size: 14px;
+    line-height: 1.5;
   }
   
   .panimula-inner h2 {
-    font-size: 20px !important;
-    margin-bottom: 12px !important;
+    font-size: 20px;
+    margin-bottom: 12px;
   }
   
   .panimula-inner h3 {
-    font-size: 17px !important;
-    margin-top: 16px !important;
-    margin-bottom: 10px !important;
+    font-size: 17px;
+    margin-top: 16px;
+    margin-bottom: 10px;
   }
   
   .panimula-inner p {
-    margin-bottom: 10px !important;
+    margin-bottom: 10px;
   }
   
   .author-container {
-    padding: 0 8px !important;
+    padding: 0 8px;
   }
   
   .author-container img {
-    border-radius: 8px !important;
+    border-radius: 8px;
   }
   
   .quiz-inner {
-    padding: 18px 14px !important;
+    padding: 18px 14px;
   }
   
   .quiz-header {
-    margin-bottom: 20px !important;
-    padding-bottom: 16px !important;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
   }
   
   .quiz-header h2 {
-    font-size: 20px !important;
-    margin-bottom: 10px !important;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   
   .quiz-intro {
-    font-size: 13px !important;
-    line-height: 1.6 !important;
-    margin-bottom: 16px !important;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 16px;
   }
   
   .question-item,
   .pagsusulit-question {
-    padding: 16px !important;
-    margin-bottom: 14px !important;
+    padding: 16px;
+    margin-bottom: 14px;
   }
   
   .question-text {
-    font-size: 14px !important;
-    margin-bottom: 12px !important;
+    font-size: 14px;
+    margin-bottom: 12px;
   }
   
   .options {
-    gap: 8px !important;
+    gap: 8px;
   }
   
   .option {
-    font-size: 13px !important;
-    padding: 10px 12px !important;
+    font-size: 13px;
+    padding: 10px 12px;
   }
   
   .submit-btn {
-    padding: 12px 24px !important;
-    font-size: 14px !important;
-    margin-top: 20px !important;
-    max-width: 250px !important;
+    padding: 12px 24px;
+    font-size: 14px;
+    margin-top: 20px;
+    max-width: 250px;
   }
   
   .quiz-result {
-    padding: 18px !important;
-    margin-top: 20px !important;
+    padding: 18px;
+    margin-top: 20px;
   }
   
   .quiz-result h3 {
-    font-size: 20px !important;
-    margin-bottom: 10px !important;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   
   .quiz-result p {
-    font-size: 15px !important;
+    font-size: 15px;
   }
   
   .pagsusulit-input {
-    padding: 8px 10px !important;
-    font-size: 14px !important;
-    min-width: 150px !important;
+    padding: 8px 10px;
+    font-size: 14px;
+    min-width: 150px;
   }
   
   .panimula-inner table {
-    font-size: 12px !important;
-    margin-top: 12px !important;
+    font-size: 12px;
+    margin-top: 12px;
   }
   
   .panimula-inner table th,
   .panimula-inner table td {
-    padding: 8px 6px !important;
-    font-size: 12px !important;
+    padding: 8px 6px;
+    font-size: 12px;
   }
 }
 
-/* Standard Mobile Phones (480px and below) */
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .site-header {
-    padding: 10px !important;
+    padding: 10px;
   }
   
   .project-label {
-    font-size: 11px !important;
-    padding: 8px 10px !important;
-    letter-spacing: 0.2px !important;
+    font-size: 11px;
+    padding: 8px 10px;
+    letter-spacing: 0.2px;
   }
   
   .pill-btn {
-    font-size: 12px !important;
-    padding: 10px 14px !important;
+    font-size: 12px;
+    padding: 10px 14px;
   }
   
   .close-btn {
-    top: 10px !important;
-    right: 10px !important;
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 18px !important;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
   }
   
   .hero-overlay {
@@ -746,159 +754,158 @@ body{
   }
   
   .overlay-inner {
-    padding: 6px !important;
+    padding: 6px;
   }
   
   .panimula-box,
   .quiz-container {
-    border-radius: 8px !important;
+    border-radius: 8px;
   }
   
   .panimula-inner {
-    font-size: 13px !important;
-    padding: 14px 10px !important;
-    line-height: 1.5 !important;
+    font-size: 13px;
+    padding: 14px 10px;
+    line-height: 1.5;
   }
   
   .panimula-inner h2 {
-    font-size: 18px !important;
-    margin-bottom: 10px !important;
+    font-size: 18px;
+    margin-bottom: 10px;
   }
   
   .panimula-inner h3 {
-    font-size: 16px !important;
-    margin-top: 14px !important;
-    margin-bottom: 8px !important;
+    font-size: 16px;
+    margin-top: 14px;
+    margin-bottom: 8px;
   }
   
   .panimula-inner p {
-    margin-bottom: 8px !important;
+    margin-bottom: 8px;
   }
   
   .quiz-inner {
-    padding: 14px 10px !important;
+    padding: 14px 10px;
   }
   
   .quiz-header {
-    margin-bottom: 16px !important;
-    padding-bottom: 12px !important;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
   }
   
   .quiz-header h2 {
-    font-size: 18px !important;
-    margin-bottom: 8px !important;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
   
   .quiz-intro {
-    font-size: 12px !important;
-    margin-bottom: 14px !important;
+    font-size: 12px;
+    margin-bottom: 14px;
   }
   
   .question-item,
   .pagsusulit-question {
-    padding: 12px !important;
-    margin-bottom: 12px !important;
+    padding: 12px;
+    margin-bottom: 12px;
   }
   
   .question-text {
-    font-size: 13px !important;
-    margin-bottom: 10px !important;
+    font-size: 13px;
+    margin-bottom: 10px;
   }
   
   .option {
-    font-size: 12px !important;
-    padding: 9px 10px !important;
+    font-size: 12px;
+    padding: 9px 10px;
   }
   
   .submit-btn {
-    padding: 11px 20px !important;
-    font-size: 13px !important;
-    max-width: 220px !important;
+    padding: 11px 20px;
+    font-size: 13px;
+    max-width: 220px;
   }
   
   .quiz-result {
-    padding: 14px !important;
+    padding: 14px;
   }
   
   .quiz-result h3 {
-    font-size: 18px !important;
+    font-size: 18px;
   }
   
   .quiz-result p {
-    font-size: 14px !important;
+    font-size: 14px;
   }
   
   .pagsusulit-input {
-    padding: 7px 9px !important;
-    font-size: 13px !important;
-    min-width: 130px !important;
+    padding: 7px 9px;
+    font-size: 13px;
+    min-width: 130px;
   }
   
   .panimula-inner table {
-    font-size: 11px !important;
-    margin-top: 10px !important;
+    font-size: 11px;
+    margin-top: 10px;
   }
   
   .panimula-inner table th,
   .panimula-inner table td {
-    padding: 6px 4px !important;
-    font-size: 11px !important;
+    padding: 6px 4px;
+    font-size: 11px;
   }
   
   .author-container {
-    padding: 0 6px !important;
+    padding: 0 6px;
   }
   
   .author-container img {
-    border-radius: 6px !important;
+    border-radius: 6px;
   }
 }
 
-/* Small Mobile Phones (360px and below) */
-@media only screen and (max-width: 360px) {
+@media (max-width: 360px) {
   .project-label {
-    font-size: 10px !important;
-    padding: 7px 8px !important;
+    font-size: 10px;
+    padding: 7px 8px;
   }
   
   .pill-btn {
-    font-size: 11px !important;
-    padding: 9px 12px !important;
+    font-size: 11px;
+    padding: 9px 12px;
   }
   
   .panimula-inner {
-    font-size: 12px !important;
-    padding: 12px 8px !important;
+    font-size: 12px;
+    padding: 12px 8px;
   }
   
   .panimula-inner h2 {
-    font-size: 16px !important;
+    font-size: 16px;
   }
   
   .panimula-inner h3 {
-    font-size: 15px !important;
+    font-size: 15px;
   }
   
   .quiz-inner {
-    padding: 12px 8px !important;
+    padding: 12px 8px;
   }
   
   .quiz-header h2 {
-    font-size: 16px !important;
+    font-size: 16px;
   }
   
   .question-text {
-    font-size: 12px !important;
+    font-size: 12px;
   }
   
   .option {
-    font-size: 11px !important;
-    padding: 8px 9px !important;
+    font-size: 11px;
+    padding: 8px 9px;
   }
   
   .panimula-inner table th,
   .panimula-inner table td {
-    padding: 5px 3px !important;
-    font-size: 10px !important;
+    padding: 5px 3px;
+    font-size: 10px;
   }
 }
